@@ -1,14 +1,65 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Discover</title>
+  <title> Morad Z Taleeb </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+  <div class="other-side">
+    <div class="back navigation right-nav">
+      <img src="moradtaleeb.jpg">
+      <p> Morad Z Taleeb </p>
+    </div>
+  </div>
+
+  <div class="main-side">
+    <section class="intro">
+
+      <div class="navigation left-nav">
+        <img src="morad.jpg">
+        <p> The Other Side of Me. </p>
+      </div>
+
+      <div class="container">
+        <div class="image-wrapper">
+          <img src="moradtaleeb.jpg">
+        </div>
+        <h1> Morad Z Taleeb </h1>
+        <p>  " Making The Web a Better Place " </p>
+        <br/><br/>
+        <p> I Write<b>/</b>Tweet About</p>
+        <nav><ul class="inline">
+          <li> <a href=""> Front-End Web </a> </li> .
+          <li> <a href=""> RoR </a> </li> .
+          <li> <a href=""> Wordpress </a> </li> .
+          <li> <a href=""> Drupal </a> </li>
+        </ul></nav>
+        <br/>
+        <p> Find me somewhere else in the web </p>
+        <ul class="inline">
+          <li> <a href=""> Linkedin </a> </li> .
+          <li> <a href=""> Twitter </a>  </li> .
+          <li> <a href=""> Mail </a>  </li>
+        </ul>
+      </div>
+
+      <div class="navigation right-nav">
+        <img src="morad-wadirum.jpg">
+        <p> The Explorer. </p>
+      </div>
+
+    </section>
+
+    <section class="page-content main-page">
+
+      <%= yield %>
+
+    </section>
+  </div>
 
 </body>
 </html>

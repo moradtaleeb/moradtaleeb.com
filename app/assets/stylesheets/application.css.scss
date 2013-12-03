@@ -1,0 +1,288 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+body {
+  font-family: tahoma, arial;
+  color: #222;
+  overflow-x: hidden;
+}
+
+.other-side {
+  background: image-url("sketches.jpg") no-repeat center center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  z-index: 0;
+  left: 0px;
+  overflow: none;
+}
+.main-side {
+  position: relative;
+  left: 0px;
+  border: none;
+}
+
+body, h1, h2, ul, p {
+  margin: 0px;
+  font-weight: normal;
+}
+
+a { text-decoration: none; }
+
+ul {
+  list-style: none;
+  padding: 0px;
+}
+ul.inline {
+  li {
+    display: inline-block;
+  }
+}
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+.clearfix {
+  display: inline-block;
+}
+html[xmlns] .clearfix {
+  display: block;
+}
+* html .clearfix {
+  height: 1%;
+}
+
+.pull-left { float: left; }
+.pull-right { float: right; }
+
+.container {
+  width: 900px;
+  margin: 0 auto;
+}
+
+@media(max-width: 900px) {
+  .container { width: 100%; }
+  .article { width: 100% !important; }
+  .intro {
+    a { padding: 5px 0px !important; }
+    position: absolute !important;
+    width: 100% !important;
+    height: 392px !important;
+    .container { padding-top: 26px !important; }
+  }
+  .main-page { top: 392px !important; }
+  .topics-nav, .tags-nav {
+    .date { text-align: left !important; font-size: 28px !important; }
+    a { display: inline-block; padding: 8px 0px; }
+  }
+}
+@media(max-width: 700px) {
+  .navigation p { color: transparent !important; text-shadow: none !important; background: none !important; }
+}
+
+.intro {
+  background: #8e8a8a;
+  color: #666;
+  height: 500px;
+  text-align: center;
+  font-size: 16px;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+
+  text-shadow: 0px 1px 1px #aaa;
+
+  /*
+  in other pages (not home page) set display to none/ or slideup/down
+  display: none; */
+
+  .container {
+    padding-top: 146px;
+    position: relative;
+    top: 0px;
+    transition: all .5s;
+    -moz-transition: all .5s;
+    -webkit-transition: all .5s;
+    -o-transition: all .5s;
+  }
+
+  .image-wrapper {
+    width: 96px;
+    height: 96px;
+    border: 3px solid #fff;
+    border-radius: 60px;
+    margin: 0px auto;
+    overflow: hidden;
+    box-shadow: 0px 0px 14px #555;
+
+    img { width: 100%; border-radius: 60px; }
+  }
+
+  h1 {
+    color: #333;
+    font-size: 24px;
+    margin-top: 26px;
+  }
+  a {
+    color: #666;
+    display: inline-block;
+    padding: 5px;
+    &:hover { color: #333; }
+  }
+  b {
+    font-weight: normal;
+    color: #999;
+  }
+}
+
+.page-content {
+  padding: 12px;
+  background: #fff;
+  position: relative;
+}
+.main-page {
+  z-index: 9;
+  top: 500px;
+  background: #fff;
+}
+
+article {
+  width: 100%;
+  margin: 26px auto;
+
+  .date {
+    width: 100px;
+    color: #999;
+    font-size: 34px;
+    padding: 1px 0px;
+    .day { color: #222 }
+    .month { font-size: 14px; }
+  }
+
+  .article {
+    width: 700px;
+    .title {
+      font-size: 36px;
+      a { color: #222; &:hover { color: #144782; } }
+    }
+    .summary, .content {
+      color: #666;
+      font-size: 18px;
+    }
+    .tags {
+      font-size: 14px;
+      margin: 4px 0;
+      a { color: #999; &:hover { color: #333;} }
+    }
+  }
+
+}
+
+.topics-nav {
+  .date {
+    font-size: 20px;
+  }
+  .article {
+    font-size: 20px;
+    a { color: #666; &:hover { color: #333; } }
+  }
+}
+
+.tags-nav {
+  .date {
+    font-size: 18px;
+  }
+  .article {
+    font-size: 18px;
+    a { color: #999; margin-right: 12px; &:hover { color: #333; } }
+  }
+}
+
+.topics-nav, .tags-nav {
+  margin: 0px;
+  .date {
+    color: #222;
+    text-align: right;
+    width: 66px;
+    padding: 0px;
+    padding-right: 34px;
+  }
+}
+
+.footer {
+  margin: 64px 0px;
+  article { margin: 6px 0px; }
+}
+
+.navigation {
+  width: 74px;
+  height: 74px;
+  position: absolute;
+  border-radius: 60px;
+  border: 3px solid #fff;
+  top: 156px;
+  cursor: pointer;
+  z-index: 3;
+
+  transition: all .2s ease-in;
+  -moz-transition: all .2s ease-in;
+  -webkit-transition: all .2s ease-in;
+  -o-transition: all .2s ease-in;
+
+  p {
+    position: relative;
+    display: block;
+    top: -44px;
+    width: 200px;
+    text-align: left;
+  }
+
+  img { width: 100%; border-radius: 60px; }
+}
+
+.back p {
+  background: rgba(255,255,255,0.8);
+  width: 112px !important;
+  padding: 0px 3px;
+  color: #666;
+  text-shadow: 0px 1px 1px #ddd;
+}
+
+.left-nav {
+  left: -40px;
+
+  p { left: 100px; }
+
+  &:hover {
+    left: -32px !important;
+    p { display: inline-block !important; }
+  }
+}
+.right-nav {
+  right: -40px;
+
+  p { right: 120px; display: none; }
+
+  &:hover {
+    right: -32px !important;
+    p { display: inline-block !important; }
+  }
+}
+
