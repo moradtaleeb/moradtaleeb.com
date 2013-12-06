@@ -17,6 +17,10 @@ body {
   color: #222;
   overflow-x: hidden;
 }
+.notice, .alert {
+  text-align: center;
+  color: #999;
+}
 
 .other-side {
   background: image-url("sketches.jpg") no-repeat center center;
@@ -27,6 +31,7 @@ body {
   z-index: 0;
   left: 0px;
   overflow: none;
+  display: none;
 }
 .main-side {
   position: relative;
@@ -92,6 +97,9 @@ html[xmlns] .clearfix {
     .date { text-align: left !important; font-size: 28px !important; }
     a { display: inline-block; padding: 8px 0px; }
   }
+  .full-topic {
+    h1 { padding: 0 0 20px !important; }
+  }
 }
 @media(max-width: 700px) {
   .navigation p { color: transparent !important; text-shadow: none !important; background: none !important; }
@@ -156,6 +164,7 @@ html[xmlns] .clearfix {
   padding: 12px;
   background: #fff;
   position: relative;
+  min-height: 640px;
 }
 .main-page {
   z-index: 9;
@@ -283,6 +292,25 @@ article {
   &:hover {
     right: -32px !important;
     p { display: inline-block !important; }
+  }
+}
+
+.full-topic {
+  .topic-content {
+    font-size: 18px; padding: 20px 0;
+    img {
+      display: block;
+      margin: 10px auto;
+      width: 98%;
+      border: 5px solid #f4f4f4;
+      min-height: 100px;
+    }
+  }
+}
+.container {
+  h1 {
+    font-size: 20px; margin: 26px 100px 0px;
+    a { color: #222; &:hover { color: #144782; } }
   }
 }
 

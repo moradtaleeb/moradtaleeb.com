@@ -1,5 +1,7 @@
-<div class="container">
+<p id="notice"><%= notice %></p>
 
+<div class="container">
+  <h1> <%= link_to @category.title, @category %> </h1>
 
   <% @topics.each do |topic| %>
     <article>
@@ -39,10 +41,10 @@
           Topics
         </div>
         <div class="pull-right article">
-          <% @categories.each_with_index do |c, i| %>
-          <% if i > 0 %> . <% end %>
-          <%= link_to c.title, c %>
-        <% end if @categories %>
+          <%= link_to "Recent",root_path %>
+          <% @categories.each do |c| %>
+            . <%= link_to c.title, c %>
+          <% end if @categories %>
         </div>
       </div>
     </article>
@@ -67,3 +69,6 @@
   </section>
 
 </div>
+
+<%= link_to 'Edit', edit_category_path(@category) %> |
+<%= link_to 'Back', categories_path %>

@@ -16,9 +16,11 @@
 //= require_tree .
 
 $(document).ready(function(){
-
+  //alert("ready");
   $(".left-nav").click(function(){
+    //alert("other-side");
     $(".intro").css("position","absolute");
+    $(".other-side").fadeIn();
     $("body").css("overflow","hidden");
     $( ".main-side" ).animate({
       left: "3000px"
@@ -33,6 +35,7 @@ $(document).ready(function(){
     }, 500, function(){
       $(".intro").css("position","fixed");
     });
+    $(".other-side").fadeOut();
 
     /* $( ".main-side" ).animate({
       left: "0px"

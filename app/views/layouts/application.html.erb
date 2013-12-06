@@ -4,7 +4,6 @@
   <title> Morad Z Taleeb </title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -17,6 +16,7 @@
   </div>
 
   <div class="main-side">
+    <% if @page == "main-page" %>
     <section class="intro">
 
       <div class="navigation left-nav">
@@ -33,10 +33,10 @@
         <br/><br/>
         <p> I Write<b>/</b>Tweet About</p>
         <nav><ul class="inline">
-          <li> <a href=""> Front-End Web </a> </li> .
-          <li> <a href=""> RoR </a> </li> .
-          <li> <a href=""> Wordpress </a> </li> .
-          <li> <a href=""> Drupal </a> </li>
+        <% @categories.each_with_index do |c, i| %>
+          <% if i > 0 %> . <% end %>
+          <li> <%= link_to c.title, c %> </li>
+        <% end if @categories %>
         </ul></nav>
         <br/>
         <p> Find me somewhere else in the web </p>
@@ -53,13 +53,16 @@
       </div>
 
     </section>
+    <% end if @page %>
 
-    <section class="page-content main-page">
+    <section class="page-content <%= @page %>">
 
       <%= yield %>
 
     </section>
   </div>
+
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 
 </body>
 </html>
