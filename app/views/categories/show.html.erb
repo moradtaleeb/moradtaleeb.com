@@ -55,14 +55,9 @@
           Tags
         </div>
         <div class="pull-right article">
-          <a href=""> Front-end Web </a> <a href=""> RoR </a>
-          <a href=""> Wordpress </a> <a href=""> Drup </a>
-          <a href=""> Front-end </a> <a href=""> RoRails </a>
-          <a href=""> Wordpress </a> <a href=""> Rails </a>
-          <a href=""> Web </a> <a href=""> RoR </a>
-          <a href=""> Wp </a> <a href=""> Drpal </a>
-          <a href=""> Frontend </a> <a href=""> RoR </a>
-          <a href=""> Wordpress </a> <a href=""> Drupl </a>
+          <% footer_tags(@category.id).each do |tag| %>
+            <%= link_to tag.title, tag %>
+          <% end %>
         </div>
       </div>
     </article>

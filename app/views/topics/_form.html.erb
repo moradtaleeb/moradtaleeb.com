@@ -25,7 +25,18 @@
   </div>
   <div class="field">
     <%= f.label :category_id %><br>
-    <%= f.text_field :category_id %>
+    <%= f.select :category_id, options_from_collection_for_select(@categories, :id, :title) %>
+  </div>
+  <div class="field">
+    <%= f.label :tags %>
+    <div class="controls">
+      <% @tags.each do |tag| %>
+        <p>
+          <%= check_box_tag("tag[]", tag.id) %>
+          <%= tag.title %>
+        </p>
+      <% end %>
+    </div>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -23,7 +23,9 @@
         </div>
 
         <div class="tags">
-          <a href=""> RoR Beginner </a> . <a href=""> RoR App </a>
+          <% topic.tags.each do |t_tag| %>
+            <%= link_to t_tag.title, t_tag %>
+          <% end if topic.tags %>
         </div>
 
         <div class="share-buttons">

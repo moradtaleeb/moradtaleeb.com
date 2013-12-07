@@ -18,10 +18,14 @@ class TopicsController < ApplicationController
   # GET /topics/new
   def new
     @topic = Topic.new
+    @categories = Category.all
+    @tags = Tag.all
   end
 
   # GET /topics/1/edit
   def edit
+    @categories = Category.all
+    @tags = Tag.all
   end
 
   # POST /topics

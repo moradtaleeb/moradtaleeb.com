@@ -12,7 +12,7 @@
           <h2 class="title"> <%= link_to topic.title, topic %> </h2>
           <p class="summary"> <%= topic.summary %> </p>
           <div class="tags">
-            <a href=""> RoR Beginner </a> . <a href=""> RoR App </a>
+
           </div>
         </div>
 
@@ -53,14 +53,9 @@
           Tags
         </div>
         <div class="pull-right article">
-          <a href=""> Front-end Web </a> <a href=""> RoR </a>
-          <a href=""> Wordpress </a> <a href=""> Drup </a>
-          <a href=""> Front-end </a> <a href=""> RoRails </a>
-          <a href=""> Wordpress </a> <a href=""> Rails </a>
-          <a href=""> Web </a> <a href=""> RoR </a>
-          <a href=""> Wp </a> <a href=""> Drpal </a>
-          <a href=""> Frontend </a> <a href=""> RoR </a>
-          <a href=""> Wordpress </a> <a href=""> Drupl </a>
+          <% footer_tags("all").each do |tag| %>
+            <%= link_to tag.title, tag %> </a>
+          <% end %>
         </div>
       </div>
     </article>
