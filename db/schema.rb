@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131203205832) do
+ActiveRecord::Schema.define(version: 20131208222608) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20131203205832) do
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
 
   create_table "tags", force: true do |t|
@@ -27,6 +28,7 @@ ActiveRecord::Schema.define(version: 20131203205832) do
     t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
 
   create_table "tags_topics", force: true do |t|
@@ -43,6 +45,14 @@ ActiveRecord::Schema.define(version: 20131203205832) do
     t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
+
+  create_table "topics_tags", force: true do |t|
+    t.integer "topic_id"
+    t.integer "tag_id"
+  end
+
+  add_index "topics_tags", ["topic_id", "tag_id"], name: "idx_topics_tags", using: :btree
 
 end

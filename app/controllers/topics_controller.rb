@@ -4,7 +4,7 @@ class TopicsController < ApplicationController
   # GET /topics
   # GET /topics.json
   def index
-    @topics = Topic.all
+    @topics = Topic.all.page params[:page]
   end
 
   # GET /topics/1
@@ -12,7 +12,7 @@ class TopicsController < ApplicationController
   def show
     @categories = Category.all
     @cat_id = @topic.category.id
-    @related_topics = Topic.select('id','title','summary').where('category_id = (?) and id not in (?)', @cat_id, @topic.id).order('RANDOM()').limit(2)
+    @related_topics = Topic.select('id','title','summary','slug').where('category_id = (?) and id not in (?)', @cat_id, @topic.id).order('RANDOM()').limit(2)
   end
 
   # GET /topics/new
@@ -47,6 +47,9 @@ class TopicsController < ApplicationController
   # PATCH/PUT /topics/1
   # PATCH/PUT /topics/1.json
   def update
+    #params[:topic][:tag_ids] ||= []
+    #binding.pry
+    @topic.tag_ids = params[:topic][:tag_ids] ||= []
     respond_to do |format|
       if @topic.update(topic_params)
         format.html { redirect_to @topic, notice: 'Topic was successfully updated.' }
@@ -71,7 +74,7 @@ class TopicsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_topic
-      @topic = Topic.find(params[:id])
+      @topic = Topic.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

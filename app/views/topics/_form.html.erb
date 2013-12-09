@@ -30,11 +30,11 @@
   <div class="field">
     <%= f.label :tags %>
     <div class="controls">
-      <% @tags.each do |tag| %>
-        <p>
-          <%= check_box_tag("tag[]", tag.id) %>
-          <%= tag.title %>
-        </p>
+      <% @tags.each do |t| %>
+        <div>
+          <%= check_box_tag("topic[tag_ids][]", t.id, @topic.tags.include?(t)) %>
+          <%= t.title %>
+        </div>
       <% end %>
     </div>
   </div>

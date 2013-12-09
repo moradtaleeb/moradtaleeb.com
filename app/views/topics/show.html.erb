@@ -19,13 +19,12 @@
 
         <div class="topic-content">
           <%= @topic.content.html_safe %>
-          <img src="">
         </div>
 
         <div class="tags">
-          <% topic.tags.each do |t_tag| %>
+          <% @topic.tags.each do |t_tag| %>
             <%= link_to t_tag.title, t_tag %>
-          <% end if topic.tags %>
+          <% end %>
         </div>
 
         <div class="share-buttons">
@@ -83,14 +82,9 @@
           Tags
         </div>
         <div class="pull-right article">
-          <a href=""> Front-end Web </a> <a href=""> RoR </a>
-          <a href=""> Wordpress </a> <a href=""> Drup </a>
-          <a href=""> Front-end </a> <a href=""> RoRails </a>
-          <a href=""> Wordpress </a> <a href=""> Rails </a>
-          <a href=""> Web </a> <a href=""> RoR </a>
-          <a href=""> Wp </a> <a href=""> Drpal </a>
-          <a href=""> Frontend </a> <a href=""> RoR </a>
-          <a href=""> Wordpress </a> <a href=""> Drupl </a>
+          <% footer_tags("all").each do |tag| %>
+            <%= link_to tag.title, tag %> </a>
+          <% end %>
         </div>
       </div>
     </article>

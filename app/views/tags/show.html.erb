@@ -1,14 +1,75 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @tag.title %>
-</p>
+<div class="container">
+  <h1> <%= link_to @category.title, @category %> / <%= @tag.title %> </h1>
 
-<p>
-  <strong>Category:</strong>
-  <%= @tag.category_id %>
-</p>
+  <% @topics.each do |topic| %>
+    <article>
+      <div class="clearfix">
+
+        <div class="date pull-left"> <span class="day">
+        <% if topic.created_at.day < 10 %>0<% end %><%= topic.created_at.day %></span>/<span class="month"><% if topic.created_at.month < 10 %>0<% end %><%= topic.created_at.month %></span> </div>
+
+        <div class="article pull-right">
+          <h2 class="title"> <%= link_to topic.title, topic %> </h2>
+          <p class="summary"> <%= topic.summary %> </p>
+          <div class="tags">
+            <% topic.tags.each do |t_tag| %>
+              <%= link_to t_tag.title, t_tag %>
+            <% end %>
+          </div>
+        </div>
+
+      </div>
+    </article>
+  <% end if @topics %>
+
+  <div class="pagination">
+    <%= paginate @topics %>
+  </div>
+
+  <section class="footer">
+    <article class="tags-nav">
+      <div class="clearfix">
+        <div class="pull-left date">
+          ReadList
+        </div>
+        <div class="pull-right article">
+          <a href=""> Articles I Enjoyed Reading. </a>
+        </div>
+      </div>
+    </article>
+
+    <article class="topics-nav">
+      <div class="clearfix">
+        <div class="pull-left date">
+          Topics
+        </div>
+        <div class="pull-right article">
+          <%= link_to "Recent",root_path %>
+          <% @categories.each do |c| %>
+            . <%= link_to c.title, c %>
+          <% end if @categories %>
+        </div>
+      </div>
+    </article>
+
+    <article class="tags-nav">
+      <div class="clearfix">
+        <div class="pull-left date">
+          Tags
+        </div>
+        <div class="pull-right article">
+          <% footer_tags(@category.id).each do |tag| %>
+            <%= link_to tag.title, tag %>
+          <% end %>
+        </div>
+      </div>
+    </article>
+  </section>
+
+</div>
+
 
 <%= link_to 'Edit', edit_tag_path(@tag) %> |
 <%= link_to 'Back', tags_path %>

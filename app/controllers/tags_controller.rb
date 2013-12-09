@@ -10,6 +10,9 @@ class TagsController < ApplicationController
   # GET /tags/1
   # GET /tags/1.json
   def show
+    @category = Category.find(@tag.category_id)
+    @categories = Category.all
+    @topics = @tag.topics.order('created_at desc').page params[:page]
   end
 
   # GET /tags/new
@@ -66,7 +69,7 @@ class TagsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_tag
-      @tag = Tag.find(params[:id])
+      @tag = Tag.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
