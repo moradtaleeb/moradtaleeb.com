@@ -1,5 +1,9 @@
-<h1>New category</h1>
+<% if user_signed_in? %>
+  <h1>New category</h1>
 
-<%= render 'form' %>
+  <%= render 'form' %>
 
-<%= link_to 'Back', categories_path %>
+  <%= link_to 'Back', categories_path %>
+<% else %>
+  Access Denied
+<% end %>

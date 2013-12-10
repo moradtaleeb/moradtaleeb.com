@@ -13,7 +13,9 @@
       <div class="article pull-right">
         <h2 class="title"> <%= @topic.title %> </h2>
 
-        <%= link_to 'Edit', edit_topic_path(@topic) %>
+        <% if user_signed_in? %>
+          <%= link_to 'Edit', edit_topic_path(@topic) %>
+        <% end %>
 
         <p class="summary"> <%= @topic.summary %> </p>
 

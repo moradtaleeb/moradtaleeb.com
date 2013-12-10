@@ -3,6 +3,10 @@
 <div class="container">
   <h1> <%= link_to @category.title, @category %> / <%= @tag.title %> </h1>
 
+  <% if user_signed_in? %>
+    <%= link_to 'Edit Tag', edit_tag_path(@tag) %>
+  <% end %>
+
   <% @topics.each do |topic| %>
     <article>
       <div class="clearfix">
@@ -69,7 +73,3 @@
   </section>
 
 </div>
-
-
-<%= link_to 'Edit', edit_tag_path(@tag) %> |
-<%= link_to 'Back', tags_path %>

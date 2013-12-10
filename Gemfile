@@ -44,6 +44,9 @@ gem 'kaminari'
 # Friendly URLs
 gem 'friendly_id', '~> 5.0.0'
 
+# Users management
+gem 'devise'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

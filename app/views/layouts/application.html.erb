@@ -29,6 +29,11 @@
           <img src="moradtaleeb.jpg">
         </div>
         <h1> Morad Z Taleeb </h1>
+
+        <% if user_signed_in? %>
+          <%= link_to "Log Out", destroy_user_session_path, :method => :delete %>
+        <% end %>
+
         <p>  " Making The Web a Better Place " </p>
         <br/><br/>
         <p> I Write<b>/</b>Tweet About</p>
@@ -60,6 +65,7 @@
       <%= yield %>
 
     </section>
+
   </div>
 
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
