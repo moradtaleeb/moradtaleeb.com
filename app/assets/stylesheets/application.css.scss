@@ -197,6 +197,7 @@ article {
     }
     .tags {
       font-size: 14px;
+      text-transform: capitalize;
       margin: 4px 0;
       a { color: #999; &:hover { color: #333;} }
     }
@@ -306,11 +307,19 @@ article {
       min-height: 100px;
     }
   }
+  .share-buttons {
+    padding-top: 20px;
+  }
 }
 .container {
   h1 {
-    font-size: 20px; margin: 26px 100px 0px;
+    font-size: 20px; margin: 26px 100px 0px; text-transform: capitalize;
     a { color: #222; &:hover { color: #144782; } }
   }
 }
 
+.comments {
+  .fb_iframe_widget,.fb_iframe_widget span, .fb_iframe_widget span iframe {
+    width: 100% !important;
+  }
+}

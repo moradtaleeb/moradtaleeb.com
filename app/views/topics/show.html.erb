@@ -30,11 +30,13 @@
         </div>
 
         <div class="share-buttons">
-          share buttons
-        </div>
+          <!-- like -->
+          <div class="fb-like" data-width="136" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
 
-        <div class="comments">
-          comments
+          <!-- tweet -->
+          <a href="https://twitter.com/share" class="twitter-share-button" data-text="<%= @topic.title %>" data-via="moradtaleeb" data-hashtags="<%= @topic.category.title.gsub(/\s+/, '_').gsub('-','') %>">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
         </div>
 
         <div class="related-articles">
@@ -46,6 +48,10 @@
               </div>
             </article>
           <% end %>
+        </div>
+
+        <div class="comments">
+          <div class="fb-comments" data-numposts="8" data-colorscheme="light"></div>
         </div>
 
       </div> <!-- /.article -->
