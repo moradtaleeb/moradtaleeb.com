@@ -323,3 +323,24 @@ article {
     width: 100% !important;
   }
 }
+
+code, .note {
+  margin: 12px 0px;
+  padding: 10px;
+  display: block;
+}
+
+code {
+  font-size: 14px;
+  color: #ddd;
+  background: #222;
+}
+
+.note {
+  background-color: #F1F0DE;
+  color: #0E0500;
+  background-image: image-url('note.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding-left: 42px;
+}
