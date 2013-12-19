@@ -131,18 +131,6 @@ html[xmlns] .clearfix {
     -o-transition: all .5s;
   }
 
-  .image-wrapper {
-    width: 96px;
-    height: 96px;
-    border: 3px solid #fff;
-    border-radius: 60px;
-    margin: 0px auto;
-    overflow: hidden;
-    box-shadow: 0px 0px 14px #555;
-
-    img { width: 100%; border-radius: 60px; }
-  }
-
   h1 {
     color: #333;
     font-size: 24px;
@@ -157,6 +145,19 @@ html[xmlns] .clearfix {
   b {
     font-weight: normal;
     color: #999;
+  }
+}
+.intro, .author {
+  .image-wrapper {
+    width: 96px;
+    height: 96px;
+    border: 3px solid #fff;
+    border-radius: 60px;
+    margin: 0px auto;
+    overflow: hidden;
+    box-shadow: 0px 0px 14px #555;
+
+    img { width: 100%; border-radius: 60px; }
   }
 }
 
@@ -343,4 +344,18 @@ code {
   background-position: 10px 10px;
   background-repeat: no-repeat;
   padding-left: 42px;
+}
+
+.author {
+  text-align: center;
+  .container {
+    border-top: 1px solid #333;
+    padding: 50px 0;
+  }
+  ul a {
+    color: #666;
+    display: inline-block;
+    padding: 5px;
+    &:hover { color: #333; }
+  }
 }

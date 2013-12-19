@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<div class="container">
+<div class="container single-topic-container">
   <h1> <%= link_to @topic.category.title, @topic.category %> </h1>
 
   <article class="full-topic">
@@ -104,4 +104,24 @@
 
 </div>
 
-</div>
+<section class="author">
+
+  <div class="container">
+    <div class="image-wrapper">
+      <!-- <img src="/images/moradtaleeb.jpg"> -->
+      <%= link_to root_path do %>
+        <%= image_tag 'moradtaleeb.jpg' %>
+      <% end %>
+    </div>
+    <h1> Morad Z Taleeb </h1>
+
+    <p>  " Making the Web a Better Place " </p>
+    <br/><br/>
+    <ul class="inline">
+      <li> <a href="http://www.linkedin.com/in/moradtaleeb" target="_blank"> Linkedin </a> </li> .
+      <li> <a href="https://twitter.com/moradtaleeb" target="_blank"> Twitter </a>  </li> .
+      <li> <a href="mailto:moradtaleeb@gmail.com"> Mail </a>  </li>
+    </ul>
+  </div>
+
+</section>
