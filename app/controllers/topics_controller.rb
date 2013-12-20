@@ -14,7 +14,7 @@ class TopicsController < ApplicationController
   def show
     @categories = Category.all
     @cat_id = @topic.category.id
-    @related_topics = Topic.select('id','title','summary','slug').where('category_id = (?) and id not in (?)', @cat_id, @topic.id).order('RANDOM()').limit(2)
+    @related_topics = Topic.select('id','title','summary','slug').where('category_id = (?) and id not in (?) and published = true', @cat_id, @topic.id).order('RANDOM()').limit(2)
   end
 
   # GET /topics/new
@@ -81,6 +81,6 @@ class TopicsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def topic_params
-      params.require(:topic).permit(:title, :summary, :content, :category_id)
+      params.require(:topic).permit(:title, :summary, :content, :category_id, :published)
     end
 end

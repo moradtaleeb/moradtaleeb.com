@@ -359,3 +359,25 @@ code {
     &:hover { color: #333; }
   }
 }
+
+input[type='text'], textarea {
+  width: 700px;
+  font-size: 14px;
+  border: 1px solid #999;
+  padding: 4px;
+}
+
+.text-area {
+  height: 100px;
+}
+
+.actions {
+  margin: 26px 0;
+}
+
+table tr:nth-child(odd) {
+  background: #f4f4f4;
+}
+table thead tr {
+  background: #d3d3d3 !important;
+}

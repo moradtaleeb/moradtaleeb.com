@@ -12,7 +12,7 @@ class CategoriesController < ApplicationController
   # GET /categories/1.json
   def show
     @categories = Category.all
-    @topics = Topic.where(category_id: @category).order('created_at desc').page params[:page]
+    @topics = Topic.where(category_id: @category, published: true).order('created_at desc').page params[:page]
   end
 
   # GET /categories/new

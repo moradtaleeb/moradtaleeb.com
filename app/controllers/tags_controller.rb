@@ -14,7 +14,7 @@ class TagsController < ApplicationController
   def show
     @category = Category.find(@tag.category_id)
     @categories = Category.all
-    @topics = @tag.topics.order('created_at desc').page params[:page]
+    @topics = @tag.topics.where('published = true').order('created_at desc').page params[:page]
   end
 
   # GET /tags/new
