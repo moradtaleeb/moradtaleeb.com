@@ -1,0 +1,404 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+
+
+ */
+body {
+  font-family: tahoma, arial;
+  color: #222;
+  overflow-x: hidden; }
+
+.notice, .alert {
+  text-align: center;
+  color: #999; }
+
+.other-side {
+  background: url(/assets/sketches2.jpg) no-repeat center center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  z-index: 0;
+  left: 0px;
+  overflow: none;
+  display: none; }
+
+.main-side {
+  position: relative;
+  left: 0px;
+  border: none; }
+
+body, h1, h2, ul, p {
+  margin: 0px;
+  font-weight: normal; }
+
+a {
+  text-decoration: none; }
+
+ul {
+  list-style: none;
+  padding: 0px; }
+
+ul.inline li {
+  display: inline-block; }
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0; }
+
+.clearfix {
+  display: inline-block; }
+
+html[xmlns] .clearfix {
+  display: block; }
+
+* html .clearfix {
+  height: 1%; }
+
+.pull-left {
+  float: left; }
+
+.pull-right {
+  float: right; }
+
+.container {
+  width: 900px;
+  margin: 0 auto; }
+
+@media (max-width: 900px) {
+  .container {
+    width: 100%; }
+
+  .article {
+    width: 100% !important; }
+
+  .intro {
+    position: absolute !important;
+    width: 100% !important;
+    height: 392px !important; }
+    .intro a {
+      padding: 5px 0px !important; }
+    .intro .container {
+      padding-top: 26px !important; }
+
+  .main-page {
+    top: 392px !important; }
+
+  .topics-nav .date, .tags-nav .date {
+    text-align: left !important;
+    font-size: 28px !important; }
+  .topics-nav a, .tags-nav a {
+    display: inline-block;
+    padding: 8px 0px; }
+
+  .full-topic h1 {
+    padding: 0 0 20px !important; } }
+@media (max-width: 700px) {
+  .navigation p {
+    color: transparent !important;
+    text-shadow: none !important;
+    background: none !important; } }
+.intro {
+  background: #8e8a8a;
+  color: #666;
+  height: 500px;
+  text-align: center;
+  font-size: 16px;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  text-shadow: 0px 1px 1px #aaa;
+  /*
+  in other pages (not home page) set display to none/ or slideup/down
+  display: none; */ }
+  .intro .container {
+    padding-top: 146px;
+    position: relative;
+    top: 0px;
+    transition: all .5s;
+    -moz-transition: all .5s;
+    -webkit-transition: all .5s;
+    -o-transition: all .5s; }
+  .intro h1 {
+    color: #333;
+    font-size: 24px;
+    margin-top: 26px; }
+  .intro a {
+    color: #666;
+    display: inline-block;
+    padding: 5px; }
+    .intro a:hover {
+      color: #333; }
+  .intro b {
+    font-weight: normal;
+    color: #999; }
+
+.intro .image-wrapper, .author .image-wrapper {
+  width: 96px;
+  height: 96px;
+  border: 3px solid #fff;
+  border-radius: 60px;
+  margin: 0px auto;
+  overflow: hidden;
+  box-shadow: 0px 0px 14px #555; }
+  .intro .image-wrapper img, .author .image-wrapper img {
+    width: 100%;
+    border-radius: 60px; }
+
+.page-content {
+  padding: 12px;
+  background: #fff;
+  position: relative;
+  min-height: 640px; }
+
+.main-page {
+  z-index: 9;
+  top: 500px;
+  background: #fff; }
+
+article {
+  width: 100%;
+  margin: 26px auto; }
+  article .date {
+    width: 100px;
+    color: #999;
+    font-size: 34px;
+    padding: 1px 0px; }
+    article .date .day {
+      color: #222222; }
+    article .date .month {
+      font-size: 14px; }
+  article .article {
+    width: 700px; }
+    article .article .title {
+      font-size: 36px; }
+      article .article .title a {
+        color: #222; }
+        article .article .title a:hover {
+          color: #144782; }
+    article .article .summary, article .article .content {
+      color: #666;
+      font-size: 18px; }
+    article .article .tags {
+      font-size: 14px;
+      text-transform: capitalize;
+      margin: 4px 0; }
+      article .article .tags a {
+        color: #999; }
+        article .article .tags a:hover {
+          color: #333; }
+
+.topics-nav .date {
+  font-size: 20px; }
+.topics-nav .article {
+  font-size: 20px; }
+  .topics-nav .article a {
+    color: #666; }
+    .topics-nav .article a:hover {
+      color: #333; }
+
+.tags-nav .date {
+  font-size: 18px; }
+.tags-nav .article {
+  font-size: 18px; }
+  .tags-nav .article a {
+    color: #999;
+    margin-right: 12px;
+    text-transform: capitalize; }
+    .tags-nav .article a:hover {
+      color: #333; }
+
+.topics-nav, .tags-nav {
+  margin: 0px; }
+  .topics-nav .date, .tags-nav .date {
+    color: #222;
+    text-align: right;
+    width: 66px;
+    padding: 0px;
+    padding-right: 34px; }
+
+.footer {
+  margin: 64px 0px; }
+  .footer article {
+    margin: 6px 0px; }
+
+.navigation {
+  width: 74px;
+  height: 74px;
+  position: absolute;
+  border-radius: 60px;
+  border: 3px solid #fff;
+  top: 156px;
+  cursor: pointer;
+  z-index: 3;
+  transition: all .2s ease-in;
+  -moz-transition: all .2s ease-in;
+  -webkit-transition: all .2s ease-in;
+  -o-transition: all .2s ease-in; }
+  .navigation p {
+    position: relative;
+    display: block;
+    top: -44px;
+    width: 200px;
+    text-align: left; }
+  .navigation img {
+    width: 100%;
+    border-radius: 60px; }
+
+.back p {
+  background: rgba(255, 255, 255, 0.8);
+  width: 112px !important;
+  padding: 0px 3px;
+  color: #666;
+  text-shadow: 0px 1px 1px #ddd; }
+
+.left-nav {
+  left: -40px; }
+  .left-nav p {
+    left: 100px; }
+  .left-nav:hover {
+    left: -32px !important; }
+    .left-nav:hover p {
+      display: inline-block !important; }
+
+.right-nav {
+  right: -40px; }
+  .right-nav p {
+    right: 120px;
+    display: none; }
+  .right-nav:hover {
+    right: -32px !important; }
+    .right-nav:hover p {
+      display: inline-block !important; }
+
+.full-topic .topic-content {
+  font-size: 18px;
+  padding: 20px 0; }
+  .full-topic .topic-content img {
+    display: block;
+    margin: 10px auto;
+    width: 98%;
+    border: 5px solid #f4f4f4;
+    min-height: 100px; }
+.full-topic .share-buttons {
+  padding-top: 20px; }
+
+.container h1 {
+  font-size: 20px;
+  margin: 26px 100px 0px;
+  text-transform: capitalize; }
+  .container h1 a {
+    color: #222; }
+    .container h1 a:hover {
+      color: #144782; }
+
+.comments .fb_iframe_widget, .comments .fb_iframe_widget span, .comments .fb_iframe_widget span iframe {
+  width: 100% !important; }
+
+code, .note {
+  margin: 12px 0px;
+  padding: 10px;
+  display: block; }
+
+code {
+  font-size: 14px;
+  color: #ddd;
+  background: #222; }
+
+.note {
+  background-color: #F1F0DE;
+  color: #0E0500;
+  background-image: url(/assets/note.png);
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding-left: 42px; }
+
+.author {
+  text-align: center; }
+  .author .container {
+    border-top: 1px solid #333;
+    padding: 50px 0; }
+  .author ul a {
+    color: #666;
+    display: inline-block;
+    padding: 5px; }
+    .author ul a:hover {
+      color: #333; }
+
+input[type='text'], textarea {
+  width: 700px;
+  font-size: 14px;
+  border: 1px solid #999;
+  padding: 4px; }
+
+.text-area {
+  height: 100px; }
+
+.actions {
+  margin: 26px 0; }
+
+table tr:nth-child(odd) {
+  background: #f4f4f4; }
+
+table thead tr {
+  background: #d3d3d3 !important; }
+.morad body {
+  background-color: #fff;
+  color: #333;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px; }
+.morad p, .morad ol, .morad ul, .morad td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px; }
+.morad pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px; }
+.morad a {
+  color: #000; }
+  .morad a:visited {
+    color: #666; }
+  .morad a:hover {
+    color: #fff;
+    background-color: #000; }
+.morad div.field, .morad div.actions {
+  margin-bottom: 10px; }
+.morad #notice {
+  color: green; }
+.morad .field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table; }
+.morad #error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0; }
+  .morad #error_explanation h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #c00;
+    color: #fff; }
+  .morad #error_explanation ul li {
+    font-size: 12px;
+    list-style: square; }
