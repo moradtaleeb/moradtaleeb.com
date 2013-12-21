@@ -47,6 +47,9 @@ gem 'friendly_id', '~> 5.0.0'
 # Users management
 gem 'devise'
 
+# plugin for creating meta tags
+gem 'metamagic'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
