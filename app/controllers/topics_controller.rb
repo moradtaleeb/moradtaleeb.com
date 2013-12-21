@@ -6,6 +6,7 @@ class TopicsController < ApplicationController
   # GET /topics.json
   def index
     @topics = Topic.all.page params[:page]
+    @published_topics = Topic.where(published: true).page params[:page]
     @categories = Category.all
   end
 
