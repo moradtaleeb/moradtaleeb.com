@@ -1,5 +1,7 @@
 <%
   meta :title => @topic.title + " | Morad Z Taleeb", :description => @topic.summary
+  meta [ :property => "og:title", :content => @topic.title + " | Morad Z Taleeb" ]
+  meta [ :property => "og:description", :content => @topic.summary ]
 %>
 
 <p id="notice"><%= notice %></p>
