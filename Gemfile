@@ -50,6 +50,9 @@ gem 'devise'
 # plugin for creating meta tags
 gem 'metamagic'
 
+# heroku, this gem will configure your app to serve assets in production, see https://devcenter.heroku.com/articles/rails4
+gem 'rails_12factor', group: :production
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
