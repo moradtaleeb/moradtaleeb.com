@@ -320,6 +320,7 @@ article {
 }
 
 .comments {
+  padding-top: 20px;
   .fb_iframe_widget,.fb_iframe_widget span, .fb_iframe_widget span iframe {
     width: 100% !important;
   }
@@ -380,4 +381,24 @@ table tr:nth-child(odd) {
 }
 table thead tr {
   background: #d3d3d3 !important;
+}
+
+.pagination {
+  text-align: center;
+  a, .page.current {
+    display: inline-block;
+    padding: 6px 10px;
+    border: 1px solid;
+    border-radius: 3px;
+    margin: 3px;
+    color: #666;
+    &:hover {
+      color: #ccc;
+      background: #f9f9f9;
+    }
+  }
+  .page.current {
+    color: #ccc;
+    background: #f9f9f9;
+  }
 }
