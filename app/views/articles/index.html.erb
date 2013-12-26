@@ -1,0 +1,90 @@
+<% if user_signed_in? %>
+<h1>Listing articles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Summary</th>
+      <th>Url</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @articles.each do |article| %>
+      <tr>
+        <td><%= article.title %></td>
+        <td><%= article.summary %></td>
+        <td><%= article.url %></td>
+        <td><%= link_to 'Show', article %></td>
+        <td><%= link_to 'Edit', edit_article_path(article) %></td>
+        <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Article', new_article_path %>
+
+<% else %>
+  <div class="container">
+    <h1> Articles I Enjoyed Reading </h1>
+
+    <% @articles.each do |article| %>
+      <article>
+        <div class="clearfix">
+
+          <div class="date pull-left"> <span class="day">
+          <% if article.created_at.day < 10 %>0<% end %><%= article.created_at.day %></span>/<span class="month"><% if article.created_at.month < 10 %>0<% end %><%= article.created_at.month %></span> </div>
+
+          <div class="article pull-right">
+            <h2 class="title"> <%= link_to article.title, article.url, target: "_blank" %> </h2>
+            <p class="summary"> <%= article.summary %> </p>
+          </div>
+
+        </div>
+      </article>
+    <% end if @articles %>
+
+    <div class="pagination">
+      <%= paginate @articles %>
+    </div>
+
+    <section class="footer">
+
+      <article class="topics-nav">
+        <div class="clearfix">
+          <div class="pull-left date">
+            Topics
+          </div>
+          <div class="pull-right article">
+            <%= link_to "Recent",root_path %>
+            <% @categories.each do |c| %>
+              . <%= link_to c.title, c %>
+            <% end if @categories %>
+          </div>
+        </div>
+      </article>
+
+      <article class="tags-nav">
+        <div class="clearfix">
+          <div class="pull-left date">
+            Tags
+          </div>
+          <div class="pull-right article">
+            <% footer_tags("all").each do |tag| %>
+              <%= link_to tag.title, tag %> </a>
+            <% end %>
+          </div>
+        </div>
+      </article>
+    </section>
+
+  </div>
+<% end %>
+

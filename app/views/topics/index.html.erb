@@ -55,10 +55,10 @@
 
         </div>
       </article>
-    <% end if @topics %>
+    <% end if @published_topics %>
 
     <div class="pagination">
-      <%= paginate @topics %>
+      <%= paginate @published_topics %>
     </div>
 
     <section class="footer">
@@ -68,7 +68,7 @@
             ReadList
           </div>
           <div class="pull-right article">
-            <a href=""> Articles I Enjoyed Reading. </a>
+            <%= link_to "Articles I Enjoyed Reading.", articles_path %>
           </div>
         </div>
       </article>
