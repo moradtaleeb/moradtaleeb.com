@@ -51,6 +51,12 @@
       </article>
     <% end if @articles %>
 
+    <% if @articles.count == 0 %>
+      <article class="no-results">
+        <p> No articles posted yet! </p>
+      </article>
+    <% end %>
+
     <div class="pagination">
       <%= paginate @articles %>
     </div>
