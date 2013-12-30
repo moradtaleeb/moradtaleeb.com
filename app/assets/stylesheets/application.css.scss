@@ -103,6 +103,7 @@ html[xmlns] .clearfix {
   .container h1, .no-results p {
     margin-left: 0 !important;
   }
+  .author h1 { margin: 26px auto 0 !important; }
 }
 @media(max-width: 700px) {
   .navigation p { color: transparent !important; text-shadow: none !important; background: none !important; }
@@ -314,6 +315,8 @@ article {
   .share-buttons {
     padding-top: 20px;
   }
+  a { color: #3373b2; &:hover { color: #1D5B9B; text-decoration: underline; } }
+  .summary { color: #bbb !important; }
 }
 .container {
   h1 {

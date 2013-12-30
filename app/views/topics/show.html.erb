@@ -23,7 +23,7 @@
           <%= link_to 'Edit', edit_topic_path(@topic) %>
         <% end %>
 
-        <p class="summary"> <%= @topic.summary %> </p>
+        <p class="summary"> <i> <%= @topic.summary %> </i> </p>
 
         <div class="topic-content">
           <%= @topic.content.html_safe %>
