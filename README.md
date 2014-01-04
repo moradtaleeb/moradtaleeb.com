@@ -1,4 +1,4 @@
 moradtaleeb.com
 ===============
 
-My personal website (Rails4 CMS)
+My personal website (Rails4 Blog)
